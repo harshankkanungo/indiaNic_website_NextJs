@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import styles from "/Users/indianic/Desktop/LearnNEXT/IndiaNic/src/styles/ProductDetails.module.css";
+
 import Navbar from "../Navbar";
 
 export const getStaticPaths = async () => {
@@ -35,29 +35,25 @@ const ProductDetails = ({ data }) => {
 
   return (
     <>
-      <div className={styles.container}>
-        <header className={styles.header}>
+      <div className="container">
+        <header className="header">
           <Navbar />
           <h1 style={{ color: "white" }}>Product Details</h1>
         </header>
-        <main className={styles.mainContent}>
-          <div className={styles.card}>
-            <h2 className={styles.title}>{data.title}</h2>
-            <p className={styles.status}>
+        <main className="mainContent">
+          <div className="card">
+            <h2 className="title">{data.title}</h2>
+            <p className="status">
               Status:
-              <span
-                className={
-                  data.completed ? styles.completed : styles.notCompleted
-                }
-              >
+              <span className={data.completed ? "completed" : "notCompleted"}>
                 {data.completed ? "Completed" : "Not Completed"}
               </span>
             </p>
-            <p className={styles.description}>
+            <p className="description">
               <strong>ID:</strong> {data.id}
             </p>
             <button
-              className={styles.backButton}
+              className="detailsButton"
               onClick={() => router.push("/products")}
             >
               Go Back to Products
